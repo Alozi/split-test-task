@@ -1,8 +1,10 @@
 import Link from "next/link";
 
+import classes from './header.module.scss';
+
 export default function Header() {
     return (
-        <header>
+        <header className={classes.header}>
             <nav>
                 <ul>
                     <li>
