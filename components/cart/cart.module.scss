@@ -2,12 +2,40 @@
 @use "@/styles/mixins";
 
 .wrapper {
-  @include mixins.respond-up(lg) {
-    width: 442px;
+  overflow-y: auto;
+  padding: 30px 29px 32px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80vw;
+  max-width: 400px;
+  padding: 30px 20px;
+  background-color: variables.$bg-dark-color;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1000;
+  background-color: variables.$bg-dark-color;
+
+  &.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
-  padding: 30px 29px 32px;
-  background-color: variables.$bg-dark-color;
+  @include mixins.respond-up(lg) {
+    width: 442px;
+    position: static !important;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
 
   ul {
     list-style: none;
@@ -25,61 +53,103 @@
       padding: 11px 0;
     }
   }
+}
 
-  .totalRow {
-    background-color: variables.$bg-color;
-    color: variables.$text-dark-color;
-    padding: 10px 20px 16px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.totalRow {
+  background-color: variables.$bg-color;
+  color: variables.$text-dark-color;
+  padding: 10px 20px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 
-    span {
-      font-weight: 500;
-      font-size: 10px;
-      line-height: 18px;
-      text-transform: uppercase;
+  span {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .totalPrice {
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+
+    @include mixins.respond-up(md) {
+      font-size: 26px;
+      line-height: 32px;
     }
+  }
 
-    a {
-      text-decoration: underline;
-    }
+  div:nth-child(2) {
+    text-align: right;
+  }
 
-    .totalPrice {
-      display: block;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 26px;
+  button {
+    background-color: variables.$bg-color-red;
+    color: variables.$text-white-color-2;
+    border: none;
+    grid-column: 1 / -1;
+    padding: 11px 0;
 
-      @include mixins.respond-up(md) {
-        font-size: 26px;
-        line-height: 32px;
-      }
-    }
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 150%;
+    letter-spacing: -0.187px;
+    text-transform: uppercase;
+    cursor: pointer;
 
-    div:nth-child(2) {
-      text-align: right;
-    }
-
-    button {
-      background-color: variables.$bg-color-red;
-      color: variables.$text-white-color-2;
-      border: none;
-      grid-column: 1 / -1;
-      padding: 11px 0;
-
-      font-family: Inter;
-      font-weight: 700;
-      font-size: 15px;
+    @include mixins.respond-up(md) {
+      font-size: 17px;
       line-height: 150%;
-      letter-spacing: -0.187px;
-      text-transform: uppercase;
-      cursor: pointer;
-
-      @include mixins.respond-up(md) {
-        font-size: 17px;
-        line-height: 150%;
-      }
     }
+  }
+}
+
+.closeButton {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  color: variables.$text-white-color-2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+
+  @include mixins.respond-up(lg) {
+    display: none;
+  }
+}
+
+.floatingButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: variables.$bg-color-red;
+  color: variables.$text-white-color-2;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+
+  @include mixins.respond-up(lg) {
+    display: none;
   }
 }

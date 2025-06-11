@@ -8,7 +8,7 @@ import NavLink from "./nav-link.js";
 
 import ShareIcon from '@/public/icons/share.svg';
 import CloudIcon from '@/public/icons/cloud.svg';
-import AccountIcon from '@/public/icons/account.svg'
+import AccountIcon from '@/public/icons/account.svg';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);

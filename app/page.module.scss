@@ -24,6 +24,7 @@
 
   @include mixins.respond-up(lg) {
     padding-left: 90px;
+    padding-right: 0;
 
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
