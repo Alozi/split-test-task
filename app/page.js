@@ -18,11 +18,9 @@ export default function Home() {
               perfect living space.</p>
           </div>
         </header>
-        <div className={classes.wrapper}>
-          <Exterior />
-          <CheckboxGroup />
-          <Cart />
-        </div>
+        <Exterior className={classes.exterior} />
+        <CheckboxGroup className={classes.checkboxes} />
+        <Cart className={classes.cart} />
       </main>
     </div>
   );

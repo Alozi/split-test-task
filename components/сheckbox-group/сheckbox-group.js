@@ -29,7 +29,7 @@ const options = [
   },
 ];
 
-export default function CheckboxGroup() {
+export default function CheckboxGroup({ ...props }) {
   const [checked, setChecked] = useState({});
 
   console.log(checked);
@@ -39,44 +39,46 @@ export default function CheckboxGroup() {
   };
 
   return (
-    <section className={classes.wrapper}>
-      <header>
-        <SectionTitle>Eco Upgrades</SectionTitle>
-        <p>Below are the details of the upgrades you have selected, tailored to meet your preferences and needs. Review and confirm these choices to finalize your personalised home design.</p>
-      </header>
+    <div {...props}>
+      <section className={classes.wrapper}>
+        <header>
+          <SectionTitle>Eco Upgrades</SectionTitle>
+          <p>Below are the details of the upgrades you have selected, tailored to meet your preferences and needs. Review and confirm these choices to finalize your personalised home design.</p>
+        </header>
 
-      <div className={classes.container}>
-        {options.map(({ id, title, shortDesc, premium, description }) => {
-          const isChecked = checked[id];
+        <div className={classes.container}>
+          {options.map(({ id, title, shortDesc, premium, description }) => {
+            const isChecked = checked[id];
 
-          return (
-            <label
-              key={id}
-              htmlFor={id}
-              className={`${classes.option} ${isChecked ? classes.checked : ""}`}
-            >
-              <input
-                id={id}
-                type="checkbox"
-                checked={isChecked || false}
-                onChange={() => toggleCheck(id)}
-              />
+            return (
+              <label
+                key={id}
+                htmlFor={id}
+                className={`${classes.option} ${isChecked ? classes.checked : ""}`}
+              >
+                <input
+                  id={id}
+                  type="checkbox"
+                  checked={isChecked || false}
+                  onChange={() => toggleCheck(id)}
+                />
 
-              <div className={`${classes.checkbox} ${isChecked ? classes.checkboxChecked : ""}`}>
-                {isChecked && <div className={classes.innerCircle} />}
-              </div>
+                <div className={`${classes.checkbox} ${isChecked ? classes.checkboxChecked : ""}`}>
+                  {isChecked && <div className={classes.innerCircle} />}
+                </div>
 
-              <div className={classes.content}>
-                <h3>{title}</h3>
-                <p>{shortDesc}</p>
-                <hr />
-                <span>{premium}</span>
-                <p>{description}</p>
-              </div>
-            </label>
-          );
-        })}
-      </div>
-    </section>
+                <div className={classes.content}>
+                  <h3>{title}</h3>
+                  <p>{shortDesc}</p>
+                  <hr />
+                  <span>{premium}</span>
+                  <p>{description}</p>
+                </div>
+              </label>
+            );
+          })}
+        </div>
+      </section>
+    </div>
   );
 }

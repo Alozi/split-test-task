@@ -1,21 +1,23 @@
 .page {
   display: grid;
   grid-template-rows: auto 1fr;
-  // align-items: center;
-  // justify-items: center;
-  // min-height: 100svh;
-  padding: 40px 120px;
-  // gap: 64px;
-  // font-family: var(--font-geist-sans);
+  padding: 40px 0;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "header header"
+    "exterior cart"
+    "checkboxes cart";
+  gap: 32px 24px;
+  padding-left: 120px;
 }
 
 .header {
+  grid-area: header;
   max-width: 668px;
 
   div {
@@ -46,6 +48,14 @@
   }
 }
 
-// .wrapper {
-//   border: 1px solid red;
-// }
+.exterior {
+  grid-area: exterior;
+}
+
+.checkboxes {
+  grid-area: checkboxes;
+}
+
+.cart {
+  grid-area: cart;
+}
