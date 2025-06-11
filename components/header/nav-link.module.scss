@@ -1,0 +1,38 @@
+@use "@/styles/variables";
+
+.link {
+  height: 48px;
+
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 13.5px 32.5px;
+
+  color: variables.$text-black-color;
+  background-color: variables.$bg-color-white;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover,
+  &:active {
+    border: 1px solid variables.$text-black-color;
+  }
+}
+
+.active {
+  border: 1px solid variables.$text-black-color;
+}
+
+.primary {
+  padding: 13.5px 24px;
+  color: variables.$text-white-color;
+  background-color: variables.$bg-color-red;
+}

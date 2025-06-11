@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Founders Grotesk Text';
+  src: url('/fonts/FoundersGroteskWeb-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk Text';
+  src: url('/fonts/FoundersGroteskWeb-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Founders Grotesk Text', sans-serif;
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,7 +40,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
