@@ -10,7 +10,7 @@ import DarkWood from '@/public/images/dark-wood-color.png';
 import LightGrey from '@/public/images/light-grey-color.png';
 
 export default function Exterior() {
-    return <div className={classes.wrapper}>
+    return <section className={classes.wrapper}>
         <div>
             <header>
                 <SectionTitle>Exterior</SectionTitle>
@@ -54,5 +54,5 @@ export default function Exterior() {
         <div className={classes.image}>
             <Image src={ExteriorImage} alt="Exterior image" />
         </div>
-    </div>
+    </section>
 }

@@ -1,7 +1,8 @@
 import classes from "./page.module.scss";
 
-import BackButton from "@/components/common/back-button";
-import Exterior from "@/components/exterior/exterior";
+import BackButton from "@/components/common/back-button.js";
+import Exterior from "@/components/exterior/exterior.js";
+import CheckboxGroup from "@/components/сheckbox-group/сheckbox-group.js";
 
 export default function Home() {
   return (
@@ -18,8 +19,8 @@ export default function Home() {
         </header>
         <div className={classes.wrapper}>
           <Exterior />
+          <CheckboxGroup />
           {/* <Cart /> */}
-          {/* <Upgrades /> */}
         </div>
       </main>
     </div>
