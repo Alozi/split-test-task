@@ -1,3 +1,9 @@
+import classes from './page.module.scss';
+
 export default function Save() {
-    return <h1>Save</h1>
+    return (
+        <main className={classes.main}>
+            <h1>Save</h1>
+        </main>
+    );
 }

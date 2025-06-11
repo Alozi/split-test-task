@@ -3,13 +3,13 @@
 
 .wrapper {
   overflow-y: auto;
-  padding: 30px 29px 32px;
+
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 80vw;
-  max-width: 400px;
+  // max-width: 400px;
   padding: 30px 20px;
   background-color: variables.$bg-dark-color;
   box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
@@ -26,6 +26,10 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+  }
+
+  @include mixins.respond-up(md) {
+    padding: 30px 29px 32px;
   }
 
   @include mixins.respond-up(lg) {
