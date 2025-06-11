@@ -60,6 +60,7 @@ export default function Header() {
                         <li>
                             <NavLink href="/profile" onClick={handleLinkClick}>
                                 <Image src={AccountIcon} alt='Account icon' />
+                                <span>Profile</span>
                             </NavLink>
                         </li>
                     </ul>

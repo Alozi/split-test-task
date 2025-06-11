@@ -25,7 +25,15 @@
     list-style: none;
 
     &:last-child a {
-      padding: 13.5px;
+      padding: 13.5px 32.5px;
+
+      @include mixins.respond-up(md) {
+        padding: 13.5px;
+
+        span {
+          display: none;
+        }
+      }
     }
   }
 
