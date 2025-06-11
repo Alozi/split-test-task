@@ -47,13 +47,13 @@ export default function Exterior({ ...props }) {
                         <tr style={{ height: '24px' }}></tr>
                         <tr className={classes.totalRow}>
                             <td className={classes.totalLabel} colSpan={2}>Total:</td>
-                            <td className={classes.totalPrice}>+ $5,800.00</td>
+                            <td className={classes.totalPrice}>+&nbsp;$5,800.00</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div className={classes.image}>
-                <Image src={ExteriorImage} alt="Exterior image" />
+                <Image src={ExteriorImage} alt="Exterior image" fill style={{ objectFit: 'cover' }} />
             </div>
         </section>
     </div>

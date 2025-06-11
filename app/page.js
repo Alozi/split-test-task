@@ -13,8 +13,8 @@ export default function Home() {
           <BackButton />
           <div>
             <h1>Your estimation for <span>Mary’s NY Townhouse</span></h1>
-            <p>Here is a detailed estimate for your customized home. Review each section to ensure <br />
-              your choices match your preferences. Adjust any options as needed to create your <br />
+            <p>Here is a detailed estimate for your customized home. Review each section to ensure
+              your choices match your preferences. Adjust any options as needed to create your
               perfect living space.</p>
           </div>
         </header>

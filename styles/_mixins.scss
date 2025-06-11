@@ -1,0 +1,25 @@
+@use "./breakpoints";
+
+@mixin respond-up($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: breakpoints.$breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: breakpoints.$breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: breakpoints.$breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: breakpoints.$breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (min-width: breakpoints.$breakpoint-xxl) {
+      @content;
+    }
+  }
+}
