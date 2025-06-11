@@ -1,8 +1,9 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
 import Link from "next/link";
+import styles from "./page.module.scss";
 
-import ArrowBackIcon from '@/public/icons/arrow-back.svg'
+import ArrowBackIcon from '@/public/icons/arrow-back.svg';
+import Exterior from "@/components/exterior/exterior";
 
 export default function Home() {
   return (
@@ -20,8 +21,10 @@ export default function Home() {
               perfect living space.</p>
           </div>
         </header>
-        <div>
-
+        <div className={styles.wrapper}>
+          <Exterior />
+          {/* <Cart /> */}
+          {/* <Upgrades /> */}
         </div>
       </main>
     </div>

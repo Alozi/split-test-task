@@ -10,10 +10,9 @@
 }
 
 .main {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 32px;
-  // grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .header {
@@ -57,4 +56,8 @@
     line-height: 25px;
     letter-spacing: -3%;
   }
+}
+
+.wrapper {
+  border: 1px solid red;
 }

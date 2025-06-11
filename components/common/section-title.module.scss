@@ -1,0 +1,12 @@
+@use "@/styles/variables";
+
+.title {
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+.colorLight {
+  color: variables.$text-white-color-2;
+}
