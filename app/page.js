@@ -1,15 +1,14 @@
 import classes from "./page.module.scss";
 
-import LinkWithIcon from "@/components/common/link-with-icon";
+import BackButton from "@/components/common/back-button";
 import Exterior from "@/components/exterior/exterior";
-import ArrowBackIcon from '@/public/icons/arrow-back.svg';
 
 export default function Home() {
   return (
     <div className={classes.page}>
       <main className={classes.main}>
         <header className={classes.header}>
-          <LinkWithIcon href="#" icon={ArrowBackIcon} title="Back" />
+          <BackButton />
           <div>
             <h1>Your estimation for <span>Mary’s NY Townhouse</span></h1>
             <p>Here is a detailed estimate for your customized home. Review each section to ensure <br />
