@@ -1,14 +1,24 @@
 @use "@/styles/variables";
+@use "@/styles/mixins";
 
 .header {
   border-bottom: 1px solid variables.$border-color;
   background: variables.$bg-color;
   padding: 13px 29px 11px;
+  position: relative;
+  z-index: 200;
 
   ul {
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
     gap: 20px;
+    margin: 0;
+    padding: 0;
+
+    @include mixins.respond-up(md) {
+      flex-direction: row;
+    }
   }
 
   li {
@@ -16,6 +26,99 @@
 
     &:last-child a {
       padding: 13.5px;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .burger {
+    display: block;
+
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 210;
+
+    @include mixins.respond-up(md) {
+      display: none;
+    }
+
+    span,
+    span::before,
+    span::after {
+      content: "";
+      display: block;
+      background: variables.$text-black-color;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    span::before {
+      top: -8px;
+    }
+
+    span::after {
+      top: 8px;
+    }
+
+    &.open span {
+      background: transparent;
+    }
+
+    &.open span::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    &.open span::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: variables.$bg-color;
+      width: 100%;
+      height: 100vh;
+      padding: 100px 29px 20px;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      z-index: 200;
+
+      ul {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+
+    &.active {
+      @media (max-width: 768px) {
+        transform: translateY(0);
+      }
     }
   }
 }

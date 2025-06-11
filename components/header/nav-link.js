@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import classes from './nav-link.module.scss';
 
-export default function NavLink({ href, children, primary }) {
+export default function NavLink({ href, children, primary, ...props }) {
     const path = usePathname();
 
     let linkClasses = `${classes.link}`;
@@ -19,7 +19,7 @@ export default function NavLink({ href, children, primary }) {
     }
 
     return (
-        <Link href={href} className={linkClasses}>
+        <Link href={href} className={linkClasses} {...props}>
             {children}
         </Link>
     );
