@@ -1,0 +1,51 @@
+@use "@/styles/variables";
+
+@font-face {
+  font-family: "Founders Grotesk Text";
+  src: url("/fonts/FoundersGroteskWeb-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Founders Grotesk Text";
+  src: url("/fonts/FoundersGroteskWeb-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Family";
+  src: url("/fonts/Family-Italic.otf") format("otf");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: variables.$text-black-color;
+  background: variables.$bg-color;
+  font-family: "Founders Grotesk Text", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
