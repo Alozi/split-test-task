@@ -1,0 +1,78 @@
+@use "@/styles/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: flex-start;
+  gap: 32px;
+  background-color: variables.$bg-color-white;
+  padding: 30px 32px 33px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 38px;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  tr {
+    border-bottom: 1px solid variables.$border-color-grey;
+
+    &:nth-child(3) {
+      border-bottom: 0;
+    }
+  }
+
+  td {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    vertical-align: middle;
+  }
+
+  .title {
+    text-align: left;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .middle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 50px;
+
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.48px;
+  }
+
+  .price {
+    text-align: right;
+  }
+
+  .totalRow {
+    background-color: #d9d4c8;
+    border-top: 2px solid #000000;
+  }
+
+  .totalLabel {
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .totalPrice {
+    text-align: right;
+    padding: 15px 20px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .image {
+  }
+}
